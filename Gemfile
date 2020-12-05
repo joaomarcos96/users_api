@@ -7,7 +7,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'dotenv-rails'
-gem 'devise_token_auth'
+gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
