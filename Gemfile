@@ -10,6 +10,7 @@ gem 'dotenv-rails'
 gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
+gem 'pundit'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development do
