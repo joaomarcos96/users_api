@@ -14,14 +14,14 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_presence_of :first_name }
     it { is_expected.to validate_presence_of :last_name }
     it { is_expected.to validate_presence_of :email }
-  end
 
-  context 'with valid attributes' do
-    it { expect(user).to be_valid }
-  end
+    context 'with valid attributes' do
+      it { expect(user).to be_valid }
+    end
 
-  context 'with invalid attributes' do
-    it { expect(invalid_user).to_not be_valid }
+    context 'with invalid attributes' do
+      it { expect(invalid_user).to_not be_valid }
+    end
   end
 
   describe 'roles' do
