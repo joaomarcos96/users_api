@@ -2,9 +2,9 @@ class UserPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       if user.admin?
-        scope.all
+        scope.kept
       else
-        scope.where(id: user.id)
+        scope.kept.where(id: user.id)
       end
     end
   end
