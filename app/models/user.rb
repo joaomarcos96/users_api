@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
 
   include Discard::Model
 
+  def active_for_authentication?
+    super && !discarded?
+  end
+
   def admin?
     role == 'admin'
   end
