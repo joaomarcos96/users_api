@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: %i[show update destroy]
-  before_action :perform_authorization, only: %i[show update destroy]
 
   def index
     authorize current_user
@@ -12,10 +11,14 @@ class UsersController < ApplicationController
   end
 
   def show
+    authorize @user
+
     render json: @user
   end
 
   def update
+    authorize @user
+
     if @user.update(user_params)
       render json: @user
     else
@@ -31,9 +34,5 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:first_name, :last_name)
-    end
-
-    def perform_authorization
-      authorize @user
     end
 end
