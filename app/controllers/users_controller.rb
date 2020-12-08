@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     authorize current_user
 
-    @users = policy_scope(User).kept
+    @users = policy_scope(User)
 
     render json: @users
   end
