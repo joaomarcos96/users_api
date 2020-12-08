@@ -26,6 +26,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    authorize @user
+
+    @user.discard
+  end
+
   private
 
     def set_user
