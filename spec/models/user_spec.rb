@@ -1,15 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe 'validations' do
-    it { should validate_presence_of :first_name }
-    it { should validate_presence_of :last_name }
-    it { should validate_presence_of :email }
-  end
-
   let(:user) { create(:user) }
   let(:admin) { create(:admin) }
   let(:invalid_user) { build(:user, :invalid) }
+  let(:discarded_user) do
+    user = create(:user)
+    user.discard
+    user
+  end
+
+  describe 'validations' do
+    it { is_expected.to validate_presence_of :first_name }
+    it { is_expected.to validate_presence_of :last_name }
+    it { is_expected.to validate_presence_of :email }
+  end
 
   context 'with valid attributes' do
     it { expect(user).to be_valid }
@@ -25,7 +30,15 @@ RSpec.describe User, type: :model do
     end
 
     context 'when admin' do
-      it { expect(admin).to_not be_admin }
+      it { expect(admin).to be_admin }
     end
+  end
+
+  context 'when discarded' do
+    it { expect(discarded_user).to_not be_active_for_authentication }
+  end
+
+  context 'when not discarded' do
+    it { expect(user).to be_active_for_authentication }
   end
 end
