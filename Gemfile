@@ -6,6 +6,7 @@ ruby '2.7.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'discard', '~> 1.2'
 gem 'dotenv-rails'
 gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth'
 gem 'pg', '>= 0.18', '< 2.0'

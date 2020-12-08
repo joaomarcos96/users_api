@@ -78,6 +78,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    discard (1.2.0)
+      activerecord (>= 4.2, < 7)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
@@ -178,6 +180,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   devise_token_auth!
+  discard (~> 1.2)
   dotenv-rails
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
