@@ -72,7 +72,7 @@ RSpec.describe 'Users as :admin', type: :request do
 
     it 'discards User' do
       delete url, headers: headers
-      expect(User.kept.find_by(id: user.id)).to be_nil
+      expect(User.kept.find_by_id(user.id)).to be_nil
     end
 
     it 'returns success status' do
