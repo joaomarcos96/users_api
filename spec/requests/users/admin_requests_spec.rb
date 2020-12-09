@@ -6,6 +6,7 @@ RSpec.describe 'Users as :admin', type: :request do
 
   context 'GET /users' do
     let(:url) { '/users' }
+
     it 'returns all users' do
       get url, headers: headers
       expect(json_body.count).to be > 0
@@ -66,14 +67,13 @@ RSpec.describe 'Users as :admin', type: :request do
   end
 
   context 'DELETE /users/:id' do
-    let!(:user) { create(:user) }
+    let!(:user) { create :user }
     let(:url) { "/users/#{user.id}" }
 
-    # it 'discards User' do
-    #   expect do
-    #     delete url, headers: headers
-    #   end.to change { User.kept.count }.by(-1)
-    # end
+    it 'discards User' do
+      delete url, headers: headers
+      expect(User.kept.find_by(id: user.id)).to be_nil
+    end
 
     it 'returns success status' do
       delete url, headers: headers
