@@ -61,6 +61,12 @@ Se estiver executando o projeto pela primeira vez, execute os seguintes comandos
 
 ### Rodando o projeto
 
+Se for a primeira vez que estiver executando o projeto, crie seu próprio `.env` baseado no `.env.sample` e substitua com suas variáveis de ambiente:
+
+```
+cp .env.sample .env
+```
+
 Para rodar a aplicação execute o seguinte comando:
 
 ```
