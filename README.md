@@ -2,7 +2,7 @@
 
 ## Introdução
 
-`Users API` é uma RESTful JSON API em Ruby on Rails contendo um CRUD de usuários, com autenticação, autorização e testes automatizados.
+`Users API` é uma RESTful JSON API escrita em `Ruby on Rails`, contendo um CRUD de usuários com autenticação, autorização e testes automatizados.
 
 A documentação da API se encontra no `Postman`, acessível pela seguinte URL: <https://documenter.getpostman.com/view/6576121/TVmTcEpb>
 
@@ -41,7 +41,7 @@ O banco de dados utilizado é o `PostgreSQL`.
 
 Se estiver executando o projeto pela primeira vez, execute os seguintes comandos para fazer o setup do banco de dados:
 
-- Crie o banco
+- Crie o banco:
     
     ```
     bin/rake db:create
