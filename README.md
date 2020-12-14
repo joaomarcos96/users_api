@@ -29,10 +29,13 @@ Os pré-requisitos para rodar o projeto são:
 
 ### Instalando as dependências
 
-Rode o comando abaixo para instalar as dependências:
+Rode os seguintes comandos abaixo para instalar as dependências:
 
 ```
 bundle install
+```
+```
+yarn
 ```
 
 ### Banco de dados
